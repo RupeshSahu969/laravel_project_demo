@@ -36,9 +36,48 @@ class UserController extends Controller
 function querues(){
 
     // return "queries";
-    $request=DB::table('users')->get();
-    return view('users',['users'=>$request] );
-    
+     $request=DB::table('users')->get();
+     return view('users',['users'=>$request] );
+
+
+     // insert in database
+
+    // $result=DB::table('users')->insert([
+    //     'name'=>'baja',
+    //     'email'=>'baja@gmail.com',
+    //     'password'=>'1234321'
+    // ]);
+    // if($result){
+    //     return "data inserted";
+    // }
+    // else{
+    //     return "data not inserted";
+    // }
+
+
+    // update in any filed here ;
+
+    // $result=DB::table('users')->where('name','raja')
+    // ->update(['password'=>'121212']);
+    // if($result){
+    //     return "data inserted";
+    // }
+    // else{
+    //     return "data not inserted";
+    // }
+
+
+// data delete
+
+$result=DB::table('users')->where('name','baja')
+->delete();
+if($result){
+    return "data deleted";
+}
+else{
+    return "data not deleted";
+}
+
 
 }
 
